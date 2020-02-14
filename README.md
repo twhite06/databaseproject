@@ -17,7 +17,7 @@ hashing and allows you to query them.
 
 
 Files: 
-design.txt
+--> design.txt
     Explains my plan for the project and what I should be doing. Though my plan
     in the beginning stayed the same for the most part throughout the project,
     a few things changed as I optimized the project. During my implementation
@@ -25,30 +25,30 @@ design.txt
     contained wordContents to an array of vectors which contained the lowercase 
     version of a word and another vector of word contents.
 
-DirNode.h
+--> DirNode.h
     Used to create nodes on the tree I am using.
 
-FSTree.h 
+--> FSTree.h 
     Used to create tree with the DirNode file.
 
-main.cpp
+--> main.cpp
     This file was originally FSTreeTraversal, but I ended up making it become 
     my main driver. I run the main starter commands through this file and also 
     have teo functions in this file that traverses and hashes the tree as well
     as search query and search the tree. Main is very useful for me to be able 
     to store the paths that I needed to print out from the query search.
 
-stringProcessing.cpp
+--> stringProcessing.cpp
     Does the string stripping for the query searching to take off any 
     leading or trailing non-alphaNum characters the user types.
 
-stringProcessing.h
+--> stringProcessing.h
     Declaration for the string strip function
 
-Makefile:
+--> Makefile:
     Creates the commands for compilation
 
-HashClass.cpp:
+--> HashClass.cpp:
     Contains the function for doing the hashing of each word from the file and 
     placing it in the hash table structure. Once each word has been hashed, the
     class also is able to do the searching and printing to outfile (cout or 
@@ -56,10 +56,10 @@ HashClass.cpp:
 
 
 Data Structures:
-Hash Table with array of vectors. Each vector has in it a string lowercase word
+--> Hash Table with array of vectors. Each vector has in it a string lowercase word
 and a Vector of word contents (every instance of that word). 
 
-4 structs for information needed to be stored. Linecontent stores the string of
+--> 4 structs for information needed to be stored. Linecontent stores the string of
 the line and int of the line number. Indexes stores the index of the line and
 path vector that holds the information needed. WordContent stores the word read 
 in and a vector of indexes for my line and path vectors. Bucketdata stores the 
@@ -68,7 +68,7 @@ lowere case version of a word and a vector of wordContents
 
 Testing:
 
-Instead of a testing main this time I tested each step as I was building my 
+--> Instead of a testing main this time I tested each step as I was building my 
 hash class. Once I declared my initial hash structure, I pushed test values 
 onto the vectors at each index and printed our that information to make sure 
 the main structure was working well. Then when I created an instance of my
