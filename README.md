@@ -1,4 +1,5 @@
  # Database - Word - Search
+ 
  README
  *
  * Author: Tim White 
@@ -6,12 +7,15 @@
 
 
 Program Purpose:
+	
 	This program indexes all words in a given root directory file through
-hashing and allows you to query them.
+	hashing and allows you to query them.
 
 
-Files: 
---> design.txt
+Files:
+
+--> design.txt:
+
     	Explains my plan for the project and what I should be doing. Though my plan
     in the beginning stayed the same for the most part throughout the project,
     a few things changed as I optimized the project. During my implementation
@@ -19,67 +23,76 @@ Files:
     contained wordContents to an array of vectors which contained the lowercase 
     version of a word and another vector of word contents.
 
---> DirNode.h
+--> DirNode.h:
+
     	Used to create nodes on the tree I am using.
 
---> FSTree.h 
+--> FSTree.h:
+
     	Used to create tree with the DirNode file.
 
---> main.cpp
+--> main.cpp:
+
     	This file was originally FSTreeTraversal, but I ended up making it become 
     my main driver. I run the main starter commands through this file and also 
     have teo functions in this file that traverses and hashes the tree as well
     as search query and search the tree. Main is very useful for me to be able 
     to store the paths that I needed to print out from the query search.
 
---> stringProcessing.cpp
+--> stringProcessing.cpp:
+
     	Does the string stripping for the query searching to take off any 
     leading or trailing non-alphaNum characters the user types.
 
---> stringProcessing.h
+--> stringProcessing.h:
+
     	Declaration for the string strip function
 
 --> Makefile:
+
     	Creates the commands for compilation
 
 --> HashClass.cpp:
+
     	Contains the function for doing the hashing of each word from the file and 
     placing it in the hash table structure. Once each word has been hashed, the
     class also is able to do the searching and printing to outfile (cout or 
     file output).
 
 
-Data Structures:
---> 	Hash Table with array of vectors. Each vector has in it a string lowercase word
-and a Vector of word contents (every instance of that word). 
 
---> 	4 structs for information needed to be stored. Linecontent stores the string of
-the line and int of the line number. Indexes stores the index of the line and
-path vector that holds the information needed. WordContent stores the word read 
-in and a vector of indexes for my line and path vectors. Bucketdata stores the 
-lowere case version of a word and a vector of wordContents 
+
+Data Structures:
+
+	Hash Table with array of vectors. Each vector has in it a string lowercase word and a Vector of 
+	word contents (every instance of that word). 
+	
+	4 structs for information needed to be stored. Linecontent stores the string of
+	the line and int of the line number. Indexes stores the index of the line and
+	path vector that holds the information needed. WordContent stores the word read 
+	in and a vector of indexes for my line and path vectors. Bucketdata stores the 
+	lower case version of a word and a vector of wordContents 
 
 
 Testing:
 
---> 	Instead of a testing main this time I tested each step as I was building my 
-hash class. Once I declared my initial hash structure, I pushed test values 
-onto the vectors at each index and printed our that information to make sure 
-the main structure was working well. Then when I created an instance of my
-wordContent struct I printed out the information stored inside of the string
-and vector of the Wordcontent. After this, I made surer that the information
-inside of my auxilarry vectors was being correctly pushed and I printed out 
-all of the line and path info in these vectors. I also had a test printing
-function that printed out the current index of the main structure (array), the
-index of the vector in which I am currently in (within same bucket), and the
-word content inside of my word content vector. I used this test function for
-many things throughout my project to make sure the words that I was storing
-were correct. I encountered a seg fault that I was stuck on for over a week and
-only discovered after visiting 4 TA's and both professors, but knowing the 
-exact index of the main array, word, and line/path content was very helpful
-in finding this error. I also used 44 cerr statements in trying to find all 
-of my bugs, mainly the ones caused by the seg fault. I have attached the main 
-testing functions below:
+	Instead of a testing main this time I tested each step as I was building my 
+	hash class. Once I declared my initial hash structure, I pushed test values 
+	onto the vectors at each index and printed our that information to make sure 
+	the main structure was working well. Then when I created an instance of my
+	wordContent struct I printed out the information stored inside of the string
+	and vector of the Wordcontent. After this, I made surer that the information
+	inside of my auxilarry vectors was being correctly pushed and I printed out 
+	all of the line and path info in these vectors. I also had a test printing
+	function that printed out the current index of the main structure (array), the
+	index of the vector in which I am currently in (within same bucket), and the
+	word content inside of my word content vector. I used this test function for
+	many things throughout my project to make sure the words that I was storing
+	were correct. I encountered a seg fault that I was stuck on for over a week, but
+	knowing the exact index of the main array, word, and line/path content was very helpful
+	in finding this error. I also used 44 cerr statements in trying to find all 
+	of my bugs, mainly the ones caused by the seg fault. I have attached the main 
+	testing functions below:
 
 // Tests I Conducted little by little while building my HashClass
 
@@ -163,18 +176,19 @@ testing functions below:
      for (size_t i = 0; i < paths.size(); i++){
          cout << paths[i] << endl;
     }
+    
+    --> debugging function to try and print the exact indexes where my program was
+    seg faulting for over a week (index 5 for large Gutenberg and index 7 for 
+    small Gutenberg)
 
-   --> debugging function to try and print the exact indexes where my program was
-seg faulting for over a week (index 5 for large Gutenberg and index 7 for 
-small Gutenberg)
-void HashClass:: printForTest(){;
-    for (size_t i = 0; i < data[5].size(); i++){
-        for (size_t j = 0; j < data[5][i].WCVec.size(); j++){
-            for (size_t k = 0; k < data[5][i].WCVec[j].LPInfo.size(); k++){
-            }
-        }
-    }
-} 
+	void HashClass:: printForTest(){;
+	    for (size_t i = 0; i < data[5].size(); i++){
+		for (size_t j = 0; j < data[5][i].WCVec.size(); j++){
+		    for (size_t k = 0; k < data[5][i].WCVec[j].LPInfo.size(); k++){
+		    }
+		}
+	    }
+	}
 
 Error:
 My words are being stored and printing twice
