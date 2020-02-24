@@ -7,10 +7,9 @@
 
 
 Program Purpose:
+
 	
-	[Grep Linux command](https://www.tecmint.com/12-practical-examples-of-linux-grep-command/) 
-	
-	This program works very similar to the [Grep Linux command](https://www.tecmint.com/12-practical-examples-of-linux-grep-command/) indexes all words in a given root directory file through
+	This program works very similar to the Grep Linux command indexes all words in a given root directory file through
 	hashing and allows you to query them.
 
 
