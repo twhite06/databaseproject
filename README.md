@@ -63,7 +63,9 @@ Data Structures:
 	the line and int of the line number. Indexes stores the index of the line and
 	path vector that holds the information needed. WordContent stores the word read 
 	in and a vector of indexes for my line and path vectors. Bucketdata stores the 
-	lower case version of a word and a vector of wordContents 
+	lower case version of a word and a vector of wordContents.
+	
+	Tree to store the files that need to be visited based off of the given directory.
 
 
 Testing:
