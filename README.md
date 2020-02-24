@@ -15,15 +15,6 @@ Program Purpose:
 
 Files:
 
---> design.txt:
-
-    	Explains my plan for the project and what I should be doing. Though my plan
-    in the beginning stayed the same for the most part throughout the project,
-    a few things changed as I optimized the project. During my implementation
-    I actually decided to change my structure from a array of vectors which
-    contained wordContents to an array of vectors which contained the lowercase 
-    version of a word and another vector of word contents.
-
 --> DirNode.h:
 
     	Used to create nodes on the tree I am using.
