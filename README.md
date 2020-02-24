@@ -1,7 +1,7 @@
  # Database - Word - Search
  
  README
- *
+ 
  * Author: Tim White 
  * Date: 11/15/2019
 
