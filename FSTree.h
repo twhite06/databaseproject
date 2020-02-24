@@ -1,3 +1,11 @@
+ * FSTreeTraverse.cpp
+ * COMP15
+ * Spring 2019
+ *
+ *
+ * Author: Tim White 
+ * Date: 11/15/2019
+     
 #ifndef TREE_H
 #define TREE_H
 
